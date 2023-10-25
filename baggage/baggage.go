@@ -308,7 +308,7 @@ func parseMember(member string) (Member, error) {
 		// when converting the header into a data structure."
 		key = strings.TrimSpace(kv[0])
 		var err error
-		value, err = url.QueryUnescape(strings.TrimSpace(kv[1]))
+		value, err = url.PathUnescape(strings.TrimSpace(kv[1]))
 		if err != nil {
 			return newInvalidMember(), fmt.Errorf("%w: %q", err, value)
 		}
